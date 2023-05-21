@@ -11,13 +11,10 @@ let money = document.querySelector(".money");
 let sellAll = document.querySelector(".sellAll");
 
 
-
-function updateCookies () {
+function update(){
     cookieCount.innerHTML = "Cookies: " + cookies;
-}
-
-function updateMoney () {
-    money.innerHTML = "Cash: £" + cash;
+    money.innerHTML = "Cash: £" + cash.toFixed(2);
+    addEmployee.innerHTML = "Hire an employee for £10!<br>Employees : " + employees;
 }
 
 function cookieFallAnimation() {
@@ -56,25 +53,21 @@ function cookieFallAnimation() {
 addCookie.addEventListener('click', () =>{
     cookies++
     console.log(cookies);
-    updateCookies();
-    cookieFallAnimation();
+    update();
 });
 
 addEmployee.addEventListener('click', () =>{
-    if (cookies >= 10) {
-        cookies = cookies - 10;
+    if (cash>= 10.00) {
+        cash = cash - 10.00;
         employees++
-        addEmployee.innerHTML = "Hire employee for 10 cookies!<br>Employees : " + employees;
-        updateCookies();
+        update();
     }
 });
 
 sellAll.addEventListener('click', () => {
-    cash = cookies * cookiePrice
+    cash = cash + (cookies * cookiePrice)
     cookies = 0
-    updateCookies();
-    updateMoney();
-
+    update();
 });
 
 
@@ -84,8 +77,7 @@ setInterval(() => {
         for (let i = 0; i < employees; i++) {
             setTimeout(() => {
                 cookies += 1;
-                updateCookies();
-                cookieFallAnimation();
+                update();
             }, i *200); // Adjust the time gap here (in milliseconds)
         }
     }
