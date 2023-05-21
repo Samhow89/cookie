@@ -20,7 +20,7 @@ button {
 
 .main {
     
-    width: fit-content;
+    width: 500px;
     background-color: aliceblue;
     margin: auto;
     padding: 10px;
@@ -44,3 +44,32 @@ button {
     width: 100px; /* Adjust the size as needed */
     transition: top 1s linear; /* Smooth transition animation */
 }
+
+
+.instructions {
+    background-color: #f1f1f1;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.instructions h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.instructions ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.instructions p {
+    font-style: italic;
+    font-size: 14px;
+}
+
