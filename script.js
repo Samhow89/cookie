@@ -60,9 +60,16 @@ addEmployee.addEventListener('click', () =>{
 
 setInterval(() => {
     if (employees > 0) {
-        cookies += employees;
-        updateCookies();
+        for (let i = 0; i < employees; i++) {
+            setTimeout(() => {
+                cookies += 1;
+                updateCookies();
+                cookieFallAnimation();
+            }, i *500); // Adjust the time gap here (in milliseconds)
+        }
     }
 }, 5000);
+
+
 
 
