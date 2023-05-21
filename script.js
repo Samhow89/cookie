@@ -1,10 +1,14 @@
 let cookies = 0;
 let employees = 0;
+let cash = 0;
+let cookiePrice = 0.25;
 
 let addCookie = document.querySelector(".addCookie");
 let cookieCount = document.querySelector(".cookieCount");
 let addEmployee = document.querySelector(".addEmployee");
 let cookieImage = document.querySelector(".cookieImage");
+let money = document.querySelector(".money");
+let sellAll = document.querySelector(".sellAll");
 
 
 
@@ -12,6 +16,9 @@ function updateCookies () {
     cookieCount.innerHTML = "Cookies: " + cookies;
 }
 
+function updateMoney () {
+    money.innerHTML = "Cash: £" + cash;
+}
 
 function cookieFallAnimation() {
     const cookieImage = new Image();
@@ -28,7 +35,7 @@ function cookieFallAnimation() {
         transition: top 1s, opacity 0.5s;
     `;
 
-    const viewportHeight = document.documentElement.clientHeight;
+    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     const cookieFallDistance = viewportHeight - 100;
     const fadeOutStart = cookieFallDistance * 0.9;
 
@@ -42,10 +49,6 @@ function cookieFallAnimation() {
         }, fadeOutStart);
     }, 10);
 }
-
-
-
-
 
 
 
@@ -64,6 +67,14 @@ addEmployee.addEventListener('click', () =>{
         addEmployee.innerHTML = "Hire employee for 10 cookies!<br>Employees : " + employees;
         updateCookies();
     }
+});
+
+sellAll.addEventListener('click', () => {
+    cash = cookies * cookiePrice
+    cookies = 0
+    updateCookies();
+    updateMoney();
+
 });
 
 
