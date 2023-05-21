@@ -28,8 +28,9 @@ function cookieFallAnimation() {
         transition: top 1s, opacity 0.5s;
     `;
 
-    const cookieFallDistance = window.innerHeight - 100; // Distance for cookie to fall before fading out
-    const fadeOutStart = cookieFallDistance * 0.9; // Start fading out when 90% of the fall distance is reached
+    const viewportHeight = document.documentElement.clientHeight;
+    const cookieFallDistance = viewportHeight - 100;
+    const fadeOutStart = cookieFallDistance * 0.9;
 
     setTimeout(() => {
         cookieImage.style.top = `${cookieFallDistance}px`;
@@ -41,6 +42,7 @@ function cookieFallAnimation() {
         }, fadeOutStart);
     }, 10);
 }
+
 
 
 
@@ -73,7 +75,7 @@ setInterval(() => {
                 cookies += 1;
                 updateCookies();
                 cookieFallAnimation();
-            }, i *500); // Adjust the time gap here (in milliseconds)
+            }, i *200); // Adjust the time gap here (in milliseconds)
         }
     }
 }, 5000);
