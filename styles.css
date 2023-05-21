@@ -31,3 +31,15 @@ button {
 .addEmployee {
     padding: 10px;
 }
+
+
+
+
+.cookieImage {
+    position: absolute;
+    top: -100px; /* Initial position outside the screen */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* Adjust the size as needed */
+    transition: top 1s linear; /* Smooth transition animation */
+}
