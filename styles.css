@@ -1,7 +1,10 @@
 body {
     text-align: center;
-    overflow: hidden;
+
+    
 }
+
+
 h1 {
    margin-bottom: 0px;
     font-size: 65px;
@@ -19,16 +22,16 @@ button {
 }
 
 .main {
-    
     width: 500px;
     background-color: aliceblue;
-    margin: auto;
     padding: 10px;
     box-shadow: 2px 5px 10px;
     margin-bottom: 20px;
-    
-    
+    margin: 20px;
+   
 }
+
+
 .addEmployee {
     padding: 10px;
 }
@@ -48,11 +51,11 @@ button {
 
 .instructions {
     background-color: #f1f1f1;
-    margin: auto;
+    margin: 10px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    width: 500px;
+    width: 400px;
     text-align: left;
     margin-top: 10px;
 }
@@ -72,4 +75,11 @@ button {
     font-style: italic;
     font-size: 14px;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
 

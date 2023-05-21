@@ -25,16 +25,24 @@ function cookieFallAnimation() {
     cookieImage.style.cssText = `
         left: ${randomX}px;
         top: -100px;
-        transition: top 1s;
+        transition: top 1s, opacity 0.5s;
     `;
 
+    const cookieFallDistance = window.innerHeight - 100; // Distance for cookie to fall before fading out
+    const fadeOutStart = cookieFallDistance * 0.9; // Start fading out when 90% of the fall distance is reached
+
     setTimeout(() => {
-        cookieImage.style.top = "100vh";
-        cookieImage.addEventListener('transitionend', () => {
-            cookieImage.remove();
-        }, { once: true });
+        cookieImage.style.top = `${cookieFallDistance}px`;
+        setTimeout(() => {
+            cookieImage.style.opacity = 0;
+            cookieImage.addEventListener('transitionend', () => {
+                cookieImage.remove();
+            }, { once: true });
+        }, fadeOutStart);
     }, 10);
 }
+
+
 
 
 
