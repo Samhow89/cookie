@@ -14,15 +14,27 @@ function updateCookies () {
 
 
 function cookieFallAnimation() {
-    cookieImage.style.top = "100vh"; // Moves the cookie image to the bottom of the screen
+    const cookieImage = document.createElement("img");
+    cookieImage.src = "cookie.png";
+    cookieImage.className = "cookieImage";
+    document.body.appendChild(cookieImage);
+
+    cookieImage.style.top = "-100px"; // Initial position outside the screen
+
     setTimeout(() => {
-        cookieImage.style.display = "none"; // Hide the cookie image
+        cookieImage.style.top = "100vh"; // Moves the cookie image to the bottom of the screen
         setTimeout(() => {
-            cookieImage.style.display = "block"; // Show the cookie image
-            cookieImage.style.top = "-100px"; // Resets the position of the cookie image to the top
-        }, 100);
-    }, 1000); // Wait for 1 second before resetting the position
+            cookieImage.remove(); // Remove the cookie image from the DOM after it falls
+        }, 1000); // Wait for 1 second before removing
+    }, 10); // Start animation immediately
 }
+
+addCookie.addEventListener('click', () => {
+    cookies++;
+    console.log(cookies);
+    updateCookies();
+    cookieFallAnimation();
+});
 
 addCookie.addEventListener('click', () =>{
     cookies++
