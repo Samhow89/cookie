@@ -8,11 +8,13 @@ body {
 h1 {
    margin-bottom: 0px;
     font-size: 65px;
+    margin-top: 0px;
 }
 
 h2 {
     margin-top: 0px;
     font-size: 40px;
+    margin-bottom: 0px;
 }
 
 button {
@@ -26,11 +28,11 @@ button {
 .main {
     width: 500px;
     background-color: aliceblue;
-    padding: 10px;
+    padding: 5px;
     box-shadow: 2px 5px 10px;
-    margin-bottom: 20px;
-    margin: 20px;
-   
+    margin: 10px;
+    height: 450px;
+    width: 430px;
 }
 
 
@@ -50,13 +52,12 @@ button {
 .instructions {
     background-color: #f1f1f1;
     margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    width: 400px;
+    width: 430px;
     text-align: left;
-    margin-top: 10px;
     height: 450px;
+    position: relative;
 }
 
 .instructions h3 {
@@ -82,4 +83,21 @@ button {
     flex-wrap: wrap; 
 }
 
+.newProduct button {
+    font-size: 15px;
+}
 
+button:hover {
+    background-color: #ffffff;
+}
+
+button:active {
+    background-color: rgb(171, 171, 171);
+}
+
+.newProduct {
+    display: none;
+    position: absolute;
+    bottom: 0;
+
+}

@@ -1,6 +1,6 @@
 let cookies = 0;
 let employees = 0;
-let cash = 0;
+let cash = 100;
 let cookiePrice = 0.25;
 
 let addCookie = document.querySelector(".addCookie");
@@ -11,6 +11,7 @@ let money = document.querySelector(".money");
 let sellAll = document.querySelector(".sellAll");
 let pricePerCookie = document.querySelector(".pricePerCookie");
 let biggerCookie = document.querySelector(".biggerCookie")
+let newProduct = document.querySelector(".newProduct")
 
 
 function update(){
@@ -73,6 +74,7 @@ biggerCookie.addEventListener('click', () =>{
         cash = cash - 50.00
         cookiePrice = 0.35
         biggerCookie.style.display = "none";
+        newProduct.style.display = 'block';
         update();
     }
 })
