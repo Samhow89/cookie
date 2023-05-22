@@ -1,6 +1,6 @@
 let cookies = 0;
 let employees = 0;
-let cash = 100;
+let cash = 0;
 let cookiePrice = 0.25;
 
 let addCookie = document.querySelector(".addCookie");
